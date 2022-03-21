@@ -25,6 +25,8 @@ CSS
 
 ・いつもPHPのMVCフレームワークで開発していましたが、ピュアのPHPでソースコードを分離した経験があまりないため、どうやって分離するかグーグル等で調べながら開発していました。
 
+・メールサーバがないため、どうやって送信したらいいから分からなかったですが、Gmailを送信サーバーとして送信機能ができました。
+
 ## 改善点
 
 ・フレームワークのようにModel、View、Controllerでソースコードを分離したほうが、機能ごとの分離が明確になることによって、それぞれの独立性が確保されます。
@@ -49,3 +51,5 @@ CSS
 ・https://www.php.net/manual/ja/mysqli-stmt.bind-param.php
 
 ・https://codingdeekshi.com/php-7-script-to-insert-data-to-mysql-database-using-prepared-statements-and-preventing-sql-injection/
+
+・https://dailyhackon.com/other-xampp-localmail/
