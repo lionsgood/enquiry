@@ -1,0 +1,172 @@
+
+<html>
+<head>
+  <style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    
+    td:first-child {
+      background-color: #f7f7f7;
+      width:20%;
+    }
+
+    .body{
+      height: 160px; 
+      width: 576px; 
+      resize: none; 
+      background-color: rgb(255, 238, 235);
+    }
+
+    .err-msg{
+      color: red;
+    }
+    </style>
+<script>
+
+function validateForm(){
+  
+  let subject_dom = document.getElementById("subject");
+  
+  let subject = subject_dom.value;
+  
+  if( subject == 1 ){
+    document.getElementById("err_msg_subject").innerHTML = "件名を選択してください。";
+    return false;
+  }else{
+    document.getElementById("err_msg_subject").innerHTML = "";
+  }
+  
+
+	let name = document.forms["main"]["name"].value;
+	if (name == null || name == "")
+	{
+    document.getElementById("err_msg_name").innerHTML = "名前を入力してください。";
+		return false;
+	}else{
+    document.getElementById("err_msg_name").innerHTML = "";
+  }
+
+  let email = document.forms["main"]["email"].value;
+  let email_regex=/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+	if (email == null || email == "")
+	{
+    document.getElementById("err_msg_email").innerHTML = "メールアドレスを入力してください。";
+		return false;
+	}
+  else if( !email.match(email_regex) )
+  {
+    document.getElementById("err_msg_email").innerHTML = "メールアドレスが正しくありません。";
+		return false;
+  }else{
+    document.getElementById("err_msg_email").innerHTML = "";
+  }
+
+  let phone_regex=/^[a-zA-Z]+$/;
+	let phone = document.forms["main"]["phone"].value;
+	if (phone == null || phone == "")
+	{
+    document.getElementById("err_msg_phone").innerHTML = "電話番号を入力してください。";
+		return false;
+	}
+  else if( isNaN(phone) )
+  {
+    document.getElementById("err_msg_phone").innerHTML = "電話番号は数字のみです。";
+		return false;
+  }else{
+    document.getElementById("err_msg_phone").innerHTML = "";
+  }
+
+	let body = document.forms["main"]["body"].value;
+	if (body == null || body == "")
+	{
+    document.getElementById("err_msg_body").innerHTML = "お問い合わせ内容を入力してください。";
+		return false;
+	}else{
+    document.getElementById("err_msg_body").innerHTML = "";
+  }
+}
+
+</script>
+</head>
+<body>
+
+<h2>お問い合わせ</h2>
+<form name="main" method="post" onsubmit="return validateForm();">
+<table>
+  <tr>
+    <td>件名</td>
+    <td>
+
+      <select name="subject" id="subject">
+        <option value="1">件名を選択してください</option>
+        <option value="2">ご意見</option>
+        <option value="3">ご感想</option>
+        <option value="4">その他</option>
+      </select>
+      
+      <div>{subject_msg}</div>
+      <div id="err_msg_subject" class="err-msg"></div>
+    </td>
+  </tr>
+  <tr>
+    <td>名前</td>
+    <td> 
+      <input type="text" name="name" id="name" value="{name}" placeholder="">
+      <div>{name_msg}</div>
+      <div id="err_msg_name" class="err-msg"></div>
+    </td>
+  </tr>
+  <tr>
+    <td>メールアドレス</td>
+    <td>
+      <input type="text" name="email" id="email" value="{email}" placeholder="">
+      <div>{email_msg}</div>
+      <div id="err_msg_email" class="err-msg"></div>
+    </td>
+  </tr>
+  <tr>
+    <td>電話番号</td>
+    <td>
+      <input type="text" name="phone" id="phone" value="{phone}" placeholder="">
+      <div>{phone_msg}</div>
+      <div id="err_msg_phone" class="err-msg"></div>
+    </td>
+  </tr>
+  <tr>
+    <td>お問い合わせ内容</td>
+    <td>
+      <textarea name="body" id="body" class="body">{body}</textarea>
+      <div>{body_msg}</div>
+      <div id="err_msg_body" class="err-msg"></div>
+    </td>
+  </tr>
+</table>
+<center><button type="submit" id="submit" name="submit">送信</button></center>
+<input type="hidden" id="subject_selected" name="subject_selected" value="{subject_selected}">
+</form>
+
+<script>
+(function() {
+  
+  let subject_selected = document.getElementById("subject_selected").value;
+  if( subject_selected != "" ){
+    console.log( document.getElementById("subject_selected").value );
+    document.getElementById("subject").value = document.getElementById("subject_selected").value;
+  }else{
+    document.getElementById("subject").value = 1;
+  }
+
+})();
+</script>
+</body>
+</html>
+

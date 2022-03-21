@@ -1,0 +1,90 @@
+<html>
+<head>
+  <style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    
+    td:first-child {
+      background-color: #f7f7f7;
+      width:20%;
+    }
+    </style>
+<script>
+
+</script>
+</head>
+<body>
+
+<h2>お問い合わせ(確認画面)</h2>
+
+  <table>
+    <tr>
+      <td>件名</td>
+      <td id="subject_text">
+        {subject_name}
+      </td>
+    </tr>
+    <tr>
+      <td>名前</td>
+      <td> 
+        {name}
+      </td>
+    </tr>
+    <tr>
+      <td>メールアドレス</td>
+      <td>
+        {email}
+      </td>
+    </tr>
+    <tr>
+      <td>電話番号</td>
+      <td>
+        {phone}
+      </td>
+    </tr>
+    <tr>
+      <td>お問い合わせ内容</td>
+      <td>
+        {body}
+      </td>
+    </tr>
+    <tr>
+      <td>
+
+      </td>
+      <td>
+        <form method="post" style="float: left;padding: 5px;">
+        <input type="hidden" name="subject" value="{subject}">
+        <input type="hidden" name="subject_selected" value="{subject}">
+        <input type="hidden" name="name"    value="{name}">
+        <input type="hidden" name="email"   value="{email}">
+        <input type="hidden" name="phone"   value="{phone}">
+        <input type="hidden" name="body"    value="{body}">
+        <input type="hidden" name="edit"    value="1">
+        <button type="submit" name="submit">修正</button>
+      </form>
+      <form method="post" style="padding: 5px;">
+        <input type="hidden" name="subject" value="{subject}">
+        <input type="hidden" name="subject_selected" value="{subject}">
+        <input type="hidden" name="name"    value="{name}">
+        <input type="hidden" name="email"   value="{email}">
+        <input type="hidden" name="phone"   value="{phone}">
+        <input type="hidden" name="body"    value="{body}">
+        <input type="hidden" name="send"    value="1">
+        <button type="submit"  name="submit">送信</button>
+      </form>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+
