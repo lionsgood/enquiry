@@ -32,6 +32,6 @@ CSS
 ・確認ページで修正ボタンをクリックした際に、お問い合わせフォームに戻り、入力値が記録されるかどうか
 
 ## 参考資料又は参考サイト
-https://www.itread01.com/articles/1478429705.html
-https://www.php.net/manual/ja/mysqli-stmt.bind-param.php
-https://codingdeekshi.com/php-7-script-to-insert-data-to-mysql-database-using-prepared-statements-and-preventing-sql-injection/
+・https://www.itread01.com/articles/1478429705.html
+・https://www.php.net/manual/ja/mysqli-stmt.bind-param.php
+・https://codingdeekshi.com/php-7-script-to-insert-data-to-mysql-database-using-prepared-statements-and-preventing-sql-injection/
