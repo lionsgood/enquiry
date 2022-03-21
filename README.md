@@ -2,13 +2,15 @@
 
 ## 開発環境
 
-#XAMPP: 
-#PHP 8.1.4
-#Apache 2.4.53
-#MariaDB 10.4.24
-#PhpMyAdmin 5.1.3
-#JavaScript 
+XAMPP: 
+PHP 8.1.4
 
+#Apache 2.4.53
+
+#MariaDB 10.4.24
+
+#PhpMyAdmin 5.1.3
+JavaScript 
 CSS
 
 ## 実装に費やした時間
